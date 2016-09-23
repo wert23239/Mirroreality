@@ -1,0 +1,11 @@
+node_modules
+config.js
+.idea
+npm-debug.log
+.DS_Store
+bower_components
+fb-token.json
+speech/snowboydecoder.pyc
+speech/snowboydetect.pyc
+.vscode
+keyfile.json
