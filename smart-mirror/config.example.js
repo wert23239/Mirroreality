@@ -2,10 +2,10 @@ var config = {
 
     // Lenguage for the mirror
     language : "en-US",
-
+    
     // Keyword Spotting (Hotword Detection)
     speech : {
-        projectId: 'streaming-speech-sample',
+        projectId: 'wildhacks-150003',
         keyFilename: './keyfile.json',
         keyword : "Smart Mirror",
         model : "smart_mirror.pmdl", // The name of your model
@@ -13,8 +13,7 @@ var config = {
         continuous: false // After a keyword is detected keep listening until speech is not heard
     },
     layout: "main",
-    greeting : ["Hi, sexy!", "Greetings, commander"], // An array of greetings to randomly choose from
-
+    greeting : ["Hello, fabulous man!", "Greetings, President elect Trump"], // An array of greetings to randomly choose from
 
     // Alternativly you can have greetings that appear based on the time of day
     /*
@@ -36,15 +35,10 @@ var config = {
 
     // forecast.io
     forecast : {
-        key : "", // Your forecast.io api key
+        key : "0018529b2732fe5b86e16a024e77a140", // Your forecast.io api key
         units : "auto", // See forecast.io documentation if you are getting the wrong units
         refreshInterval : 2, // Number of minutes the information is refreshed. Forecast.io limits requests to 1000/day: a 2min interval = 720 calls/day
     },
-
-    hello : {
-      data : ""
-    }
-
     // lights
     light : {
         settings : {
@@ -90,7 +84,7 @@ var config = {
     },
     // YouTube
     youtube: {
-      key : "" // Your YouTube API key
+      key : "AIzaSyDXxlZmfQi5e9fNKd8Ui6UDtnnguWfUJvs" // Your YouTube API key
     },
     // SoundCloud
     soundcloud: {

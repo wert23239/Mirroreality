@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "wildhacks-150003",
+  "private_key_id": "a9b35194f72d82543fcd1d78f11679a31b6a51b3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDK9iIyZNBnkyGe\n+iCqKSomFd1yc0RQn0osCuekAQsMTiLRJDlkhaJ1scIGWFF/zn+C9gGq5ti4pLxN\n+B3tAFNcWJ3ZXqf+UEHv7z8ET5NT5V2iGwmrHJ2wR5EOTa1unoOtvvZko18EaXwK\nI7MhLmbcZOpeYCdbXVurleiYc1G9yb7B6nCTxYIBRlBZ+zIbiM9SIr71yZpktqho\n04imi5dWg5i/v67F+fyXV8TfVTPknWR+0ySIU1mGwYfg23Vqn1D3Emnt07geGIIu\nKa0mHJO15W9zMdNIdkFaWFywSmdTGEOYC08xzcZl8losLGTQM214vpCKya4WG3er\nYfaFNr4ZAgMBAAECggEAf6asvWtA1FPqinWhA8TeOJP58pjit55n5Sl6pWDulO+z\n4DxbSIjwM/v4H0t+/tZexnx5cga8+ezKbnOGRuC0jVlC9ksdd8r8na6owMpXzCVv\nbZx5yUA3QX7RkeBzGybhhO6dQ5CpGzpJBIuNh2oK0cU6zt7FAibGmDWx0+h72dQh\nrfdaeB9A92wFdVJxkXITIHQqrPnD2TrPcWxOpbKVmf7AnooZrJjEmqhId9Zf20fo\ncogN7EO02aOVeR+CQbO/Zrg0rydM6ktLpBMW9UUcqaxxPzmfFEkvz2GYeHITG+Pv\nXKwMu+QABJU8CxIqb3qEChY/4z/Yz1nGMBO8/hqAnQKBgQDp2XPZ24oLUea97nz1\nNz9bLrM2/yAgBkHtoPPWoXr28PGtP8DCsj25aXmEvrzMJOJjjaW1N/6GQejX9lpw\nQo6MGyhNf+AF/Tg0bha0+KiGXmALvCme9wo2ICYJwseyw5FtzP+l4YpruL5cabiJ\nH41nMMK8WGPH1VgkAoxfvJqS/wKBgQDeL7AKnw5C6hiIzbXOUQ7ApSUYQBHxi/IK\nDysWRGHC+w9d2Z/iYLiI5FcN+ZYzzfeI/dggrYNhUyQNvLMxusZ5wYo7yQUao4xw\nzrur1tm6dgcJ+NXlRLtcR68K4HohjY0pjBjmbwUxDHSY+egoOIiJ+22wuWvBemBU\npd9NWVXm5wKBgQCQB9P4EeTzVe2FfBdQvUdzdM8DB54Uu2Xt411sC6d94ycnawXh\npQCpa1JiNUx5fBpH8N1oQWWt8XhlU6GeVRARMUTgfutPJQhyGoA31JOPtx72+1yz\nQTrz3VcwWdy/uP6gn0uyMrkb4fy1VJRJOLrSHNFESjiiwz93Zm5pJPQbpwKBgQC6\neFdMcrTrX8B7f/mnT8wLzg3Vzl/A0uytmJFWvMk3dLEu2Kggu3/kE48kQWXX0HKA\n3Fn5AuaSVc6aYNYbVF+ia9Xx2wGXm88QFdDXpRdSMCA0NEx/gDGmftrfTAn0AvKH\n/fYf3ukCgyuP/5zhtKCS/RrQCK3w0R3rrNI9/k3j3QKBgQCTx4eoUYebgSSqM14K\nSmp8VTP/Jqb20PfxqdfZkNvkltgny+Sa6wVMTJ7PfxLZzu6Zv1DOp6U04q6EuS/x\n0TcsdeYejo8T92B0KmLI4GOzwOQGUv4Wio2mEZumpYiZi9cXVmGyaMg15duH3ZRN\ndMUQO2YkP6e/umhzNXUwzxXojw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "mirroreality@wildhacks-150003.iam.gserviceaccount.com",
+  "client_id": "115322603951560523584",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mirroreality%40wildhacks-150003.iam.gserviceaccount.com"
+}
