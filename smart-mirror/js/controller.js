@@ -105,6 +105,7 @@
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.auto_wake !== 'undefined' && config.autoTimer.auto_wake == moment().format('HH:mm:ss')) {
                 console.debug('Auto-wake', config.autoTimer.auto_wake);
                 $scope.focus = "default";
+                
                 AutoSleepService.wake();
                 AutoSleepService.startAutoSleepTimer();
             }
