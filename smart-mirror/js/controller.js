@@ -98,7 +98,7 @@
         function updateTime(){
             $scope.date = new moment();
             refreshHello();
-            refreshWeatherData();
+            
             if ($rootScope.callOnce != $scope.temp )
              {  
                  $rootScope.callOnce = $scope.temp;
