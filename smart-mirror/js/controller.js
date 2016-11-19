@@ -107,7 +107,7 @@
                  $scope.hello = $rootScope.callOnce;
                 
 
-                SoundCloudService.searchSoundCloud($scope.temp).then(function(response){
+                SoundCloudService.searchSoundCloud($scope.hello).then(function(response){
                     if (response[0].artwork_url){
                         $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
                     } else {
