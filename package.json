@@ -1,0 +1,21 @@
+{
+  "name": "mirroreality",
+  "version": "1.0.0",
+  "description": "A smart mirror with visual commands",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wert23239/Mirroreality.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wert23239/Mirroreality/issues"
+  },
+  "homepage": "https://github.com/wert23239/Mirroreality#readme"
+}

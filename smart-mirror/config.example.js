@@ -2,7 +2,7 @@ var config = {
 
     // Lenguage for the mirror
     language : "en-US",
-    
+
     // Keyword Spotting (Hotword Detection)
     speech : {
         projectId: 'streaming-speech-sample',
@@ -14,6 +14,7 @@ var config = {
     },
     layout: "main",
     greeting : ["Hi, sexy!", "Greetings, commander"], // An array of greetings to randomly choose from
+
 
     // Alternativly you can have greetings that appear based on the time of day
     /*
@@ -39,6 +40,11 @@ var config = {
         units : "auto", // See forecast.io documentation if you are getting the wrong units
         refreshInterval : 2, // Number of minutes the information is refreshed. Forecast.io limits requests to 1000/day: a 2min interval = 720 calls/day
     },
+
+    hello : {
+      data : ""
+    }
+
     // lights
     light : {
         settings : {

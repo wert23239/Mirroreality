@@ -12,6 +12,7 @@
             CalendarService,
             ComicService,
             GiphyService,
+            HelloService,
             TrafficService,
             TimerService,
             ReminderService,
@@ -80,10 +81,17 @@
             }
         });
 
+        var refreshHello = function() {
+                HelloService.init().then(function(){
+                    $scope.hello = HelloService.mainDataMessage();
+            });
+        };
+
+
         //Update the time
         function updateTime(){
             $scope.date = new moment();
-
+            refreshHello();
             // Auto wake at a specific time
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.auto_wake !== 'undefined' && config.autoTimer.auto_wake == moment().format('HH:mm:ss')) {
                 console.debug('Auto-wake', config.autoTimer.auto_wake);
@@ -93,12 +101,15 @@
             }
         }
 
+
+
         // Reset the command text
         var restCommand = function(){
             $translate('home.commands').then(function (translation) {
                 $scope.partialResult = translation;
             });
         };
+
 
         /**
          * Register a refresh callback for a given interval (in minutes)
@@ -111,7 +122,10 @@
             }
         }
 
+
         _this.init = function() {
+
+
             AutoSleepService.startAutoSleepTimer();
 
             var tick = $interval(updateTime, 1000);
@@ -124,6 +138,8 @@
 
             //Initialize SoundCloud
             var playing = false, sound;
+
+
             SoundCloudService.init();
 
             var refreshCalendar = function() {
@@ -227,6 +243,7 @@
                 });
             };
 
+
             if(typeof config.traffic !== 'undefined'){
                 registerRefreshInterval(refreshTrafficData, config.traffic.refreshInterval || 5);
             }
@@ -260,6 +277,7 @@
                 $scope.news = RssService.getNews();
             };
 
+
             var getStock = function() {
               StockService.getStockQuotes().then(function(result) {
                 var stock = [];
@@ -272,7 +290,7 @@
               }, function(error) {
                 console.log(error);
               });
-            }    
+            }
 
             if (typeof config.stock !== 'undefined' && config.stock.names.length) {
               registerRefreshInterval(getStock, 30);
@@ -288,6 +306,7 @@
                     $scope.track = track;
                 });
             }
+
 
             if(typeof config.lastfm !== 'undefined' && typeof config.lastfm.key !== 'undefined' && config.lastfm.user !== 'undefined'){
                 registerRefreshInterval(getScrobblingTrack, config.lastfm.refreshInterval || 0.6)
@@ -306,7 +325,7 @@
 
             refreshRss();
             $interval(refreshRss, config.rss.refreshInterval * 60000);
-            
+
             updateNews();
             $interval(updateNews, 8000);  // cycle through news every 8 seconds
 
@@ -485,6 +504,7 @@
                     $scope.focus = "gif";
                 });
             });
+
 
             //Show fitbit stats (registered only if fitbit is configured in the main config)
             if ($scope.fitbitEnabled) {

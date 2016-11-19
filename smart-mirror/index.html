@@ -32,6 +32,7 @@
     <script src="js/services/map.js"></script>
     <script src="js/services/light.js"></script>
     <script src="js/services/giphy.js"></script>
+    <script src="js/services/hello.js"></script>
     <script src="js/services/timer.js"></script>
     <script src="js/services/geolocation.js"></script>
     <script src="js/services/calendar.js"></script>
@@ -118,7 +119,7 @@
     </div>
     <div class="container" ng-class="(listening == true)?'listening':'not-listening'">
       <div class="middle-center">
-        <h1 ng-bind="greeting"></h1>
+        <h1 ng-bind="hello"></h1>
         <div class="contents-box video-container animate-grow" ng-show="focus == 'video'">
           <iframe class="video animate-grow" ng-src="{{video}}"/></iframe>
         </div>
@@ -186,6 +187,7 @@
       </div>
       <div class="bottom-left">
         <div class="fitbit" ng-if="fitbitEnabled">
+          <h1 ng-bind="hello"></h1>
           <div><span class="fitbit-title">{{'fitbit.statsFor' | translate}} {{fbDailyAverage.fullName}}</span></div>
           <div><span class="fitbit-item">{{'fitbit.averageSteps' | translate}}: {{fbDailyAverage.averageDailySteps}}</span></div>
           <div><span class="fitbit-item">{{'fitbit.todaysSteps' | translate}}: {{fbToday.summary.steps}}</span></div>
