@@ -89,6 +89,10 @@
             });
         };
 
+        
+
+         
+
 
         //Update the time
         function updateTime(){
@@ -98,14 +102,31 @@
             if ($rootScope.callOnce != $scope.temp )
              {  
                  $rootScope.callOnce = $scope.temp;
+
+                 // change 
                  $scope.hello = $rootScope.callOnce;
+                
+
+                SoundCloudService.searchSoundCloud($scope.temp).then(function(response){
+                    if (response[0].artwork_url){
+                        $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
+                    } else {
+                        $scope.scThumb = 'http://i.imgur.com/8Jqd33w.jpg?1';
+                    }
+                    $scope.scWaveform = response[0].waveform_url;
+                    $scope.scTrack = response[0].title;
+                    $scope.focus = "sc";
+                    SoundCloudService.play();
+                });
+
+
              }
 
             // Auto wake at a specific time
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.auto_wake !== 'undefined' && config.autoTimer.auto_wake == moment().format('HH:mm:ss')) {
                 console.debug('Auto-wake', config.autoTimer.auto_wake);
                 $scope.focus = "default";
-                
+
                 AutoSleepService.wake();
                 AutoSleepService.startAutoSleepTimer();
             }
