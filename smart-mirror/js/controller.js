@@ -35,6 +35,7 @@
         $scope.layoutName = 'main';
         $scope.fitbitEnabled = false;
         $scope.config = config;
+        $rootScope.callOnce = true;
 
         if (typeof config.fitbit !== 'undefined') {
             $scope.fitbitEnabled = true;
@@ -91,7 +92,11 @@
         //Update the time
         function updateTime(){
             $scope.date = new moment();
-            refreshHello();
+            if ($rootScope.callOnce)
+             {
+                refreshHello();
+             }
+             $rootScope.callOnce = false;
             // Auto wake at a specific time
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.auto_wake !== 'undefined' && config.autoTimer.auto_wake == moment().format('HH:mm:ss')) {
                 console.debug('Auto-wake', config.autoTimer.auto_wake);
