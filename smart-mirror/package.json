@@ -41,6 +41,7 @@
     "express": "^4.13.4",
     "fitbit-oauth2": "0.0.1",
     "hyperion-client": "1.0.3",
+    "snowboy": "^1.1.0",
     "sonus": "^0.1.0"
   }
 }

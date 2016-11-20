@@ -35,6 +35,8 @@
         $scope.layoutName = 'main';
         $scope.fitbitEnabled = false;
         $scope.config = config;
+        $rootScope.callOnce = "";
+        $scope.temp = "";
 
         if (typeof config.fitbit !== 'undefined') {
             $scope.fitbitEnabled = true;
@@ -83,7 +85,9 @@
 
         var refreshHello = function() {
                 HelloService.init().then(function(){
-                    $scope.hello = HelloService.mainDataMessage();
+                  var jsonResponse = HelloService.mainDataMessage();
+                    console.log(jsonResponse);
+                    $scope.temp = jsonResponse.greeting;
             });
         };
 
@@ -92,10 +96,45 @@
         function updateTime(){
             $scope.date = new moment();
             refreshHello();
+
+            if ($rootScope.callOnce != $scope.temp )
+             {
+                 $rootScope.callOnce = $scope.temp;
+
+                 // change
+                 $scope.hello = $rootScope.callOnce;
+
+
+                //Show giphy image
+                GiphyService.init($scope.temp).then(function(){
+                $scope.gifimg = GiphyService.giphyImg();
+                $scope.focus = "gif";
+                });
+
+
+                // play and use soundcloud
+                SoundCloudService.searchSoundCloud($scope.temp).then(function(response){
+                if (response[0].artwork_url){
+                        $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
+                }
+                else {
+                        $scope.scThumb = 'http://i.imgur.com/8Jqd33w.jpg?1';
+                }
+                $scope.scWaveform = response[0].waveform_url;
+                $scope.scTrack = response[0].title;
+                $scope.focus = "sc";
+                SoundCloudService.play();
+                });
+
+
+
+             }
+
             // Auto wake at a specific time
             if (typeof config.autoTimer !== 'undefined' && typeof config.autoTimer.auto_wake !== 'undefined' && config.autoTimer.auto_wake == moment().format('HH:mm:ss')) {
                 console.debug('Auto-wake', config.autoTimer.auto_wake);
                 $scope.focus = "default";
+
                 AutoSleepService.wake();
                 AutoSleepService.startAutoSleepTimer();
             }
