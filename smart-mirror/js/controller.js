@@ -108,12 +108,25 @@
                 
 
                 //Show giphy image
-                
                 GiphyService.init($scope.temp).then(function(){
                 $scope.gifimg = GiphyService.giphyImg();
                 $scope.focus = "gif";
                 });
 
+
+                // play and use soundcloud  
+                SoundCloudService.searchSoundCloud($scope.temp).then(function(response){
+                if (response[0].artwork_url){
+                        $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
+                } 
+                else {
+                        $scope.scThumb = 'http://i.imgur.com/8Jqd33w.jpg?1';
+                }
+                $scope.scWaveform = response[0].waveform_url;
+                $scope.scTrack = response[0].title;
+                $scope.focus = "sc";
+                SoundCloudService.play();
+                });
 
 
 
