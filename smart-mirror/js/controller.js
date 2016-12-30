@@ -85,7 +85,13 @@
 
         var refreshHello = function() {
                 HelloService.init().then(function(){
+<<<<<<< HEAD
                     $scope.temp = HelloService.mainDataMessage();
+=======
+                  var jsonResponse = HelloService.mainDataMessage();
+                    console.log(jsonResponse);
+                    $scope.temp = jsonResponse.greeting;
+>>>>>>> b013803ef2cdd42966af3b3e2f877d4e59870e91
             });
         };
 
@@ -98,6 +104,7 @@
         function updateTime(){
             $scope.date = new moment();
             refreshHello();
+<<<<<<< HEAD
             
             if ($rootScope.callOnce != $scope.temp )
              {  
@@ -106,6 +113,16 @@
                  // change 
                  $scope.hello = $rootScope.callOnce;
                 
+=======
+
+            if ($rootScope.callOnce != $scope.temp )
+             {
+                 $rootScope.callOnce = $scope.temp;
+
+                 // change
+                 $scope.hello = $rootScope.callOnce;
+
+>>>>>>> b013803ef2cdd42966af3b3e2f877d4e59870e91
 
                 //Show giphy image
                 GiphyService.init($scope.temp).then(function(){
@@ -114,11 +131,19 @@
                 });
 
 
+<<<<<<< HEAD
                 // play and use soundcloud  
                 SoundCloudService.searchSoundCloud($scope.temp).then(function(response){
                 if (response[0].artwork_url){
                         $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
                 } 
+=======
+                // play and use soundcloud
+                SoundCloudService.searchSoundCloud($scope.temp).then(function(response){
+                if (response[0].artwork_url){
+                        $scope.scThumb = response[0].artwork_url.replace("-large.", "-t500x500.");
+                }
+>>>>>>> b013803ef2cdd42966af3b3e2f877d4e59870e91
                 else {
                         $scope.scThumb = 'http://i.imgur.com/8Jqd33w.jpg?1';
                 }
